@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" style="color-scheme: light dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>潘书龙 Hansen Pan ｜ 个人作品集</title>
+<meta name="description" content="潘书龙 Hansen Pan — 香港 IT 服务工程师。电信网络运维出身，扎根企业 IT 服务，辅以软件开发能力——专注让复杂系统稳定、可控、好用。">
+<meta property="og:title" content="潘书龙 Hansen Pan ｜ 个人作品集">
+<meta property="og:description" content="网络工程 / IT 服务 / 软件开发 — 香港 · 可联系">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230c5b41'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle' fill='%23f7f6f2' font-family='sans-serif' font-weight='bold'%3E%E6%BD%98%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --paper:#f7f6f1; --card:#ffffff; --ink:#18211c; --muted:#5d6660;
+    --green:#0c5b41; --green-deep:#083f2d; --line:#e4e1d6; --lime:#d9e86e;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Noto Sans Mono",monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang HK","Microsoft JhengHei",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:92px}
+  body{
+    font-family:var(--sans);color:var(--ink);background-color:var(--paper);
+    background-image:linear-gradient(rgba(24,33,28,.045) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(24,33,28,.045) 1px,transparent 1px);
+    background-size:28px 28px;line-height:1.7;-webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--green);color:#fff}
+  a{color:var(--green)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+
+  /* ---- nav ---- */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(247,246,241,.88);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;gap:26px;height:64px}
+  .brand{font-family:var(--mono);font-size:13px;letter-spacing:.04em;display:flex;align-items:center;gap:9px;white-space:nowrap}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(12,91,65,.14)}
+  .nav-links{display:flex;gap:22px;margin-left:auto}
+  .nav-links a{text-decoration:none;color:var(--ink);font-size:15px;position:relative;padding:4px 0}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--green);transition:width .25s}
+  .nav-links a:hover::after{width:100%}
+  .lang-toggle{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
+  .lang-toggle button{border:0;background:transparent;padding:7px 13px;font-family:var(--mono);font-size:13px;cursor:pointer;color:var(--muted)}
+  .lang-toggle button.active{background:var(--ink);color:#fff}
+  .lang-toggle button:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+
+  /* ---- hero ---- */
+  .hero{display:grid;grid-template-columns:1.25fr .85fr;gap:44px;padding:72px 0 56px;align-items:start}
+  .eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--green);margin-bottom:18px}
+  h1{font-size:clamp(44px,6vw,72px);line-height:1.12;letter-spacing:.01em;margin-bottom:20px}
+  .tagline{font-size:clamp(17px,2.2vw,21px);color:#2c352f;max-width:34em;margin-bottom:16px}
+  .degree{font-size:14px;color:var(--muted);margin-bottom:30px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:15px;font-weight:600;
+    padding:13px 24px;border-radius:10px;transition:transform .15s,box-shadow .15s}
+  .btn-primary{background:var(--green);color:#fff}
+  .btn-primary:hover{background:var(--green-deep);transform:translateY(-1px);box-shadow:0 6px 18px rgba(12,91,65,.28)}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink);background:var(--card)}
+  .btn-ghost:hover{border-color:var(--green);color:var(--green)}
+  .btn:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+
+  .contact-card{background:var(--card);border:1px solid var(--line);border-right:6px solid var(--lime);
+    border-radius:4px;padding:8px 26px;box-shadow:0 10px 30px rgba(24,33,28,.06)}
+  .contact-row{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);font-size:14px}
+  .contact-row:last-child{border-bottom:0}
+  .contact-row .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted);min-width:60px;padding-top:4px}
+  .contact-row .v{word-break:break-all;text-wrap:pretty}
+  .contact-row a{color:var(--ink);text-decoration-color:var(--green);text-underline-offset:3px}
+  .contact-row a:hover{color:var(--green)}
+  .email-domain-img{height:1.15em;width:auto;vertical-align:-0.22em;margin-left:2px}
+
+  /* ---- sections ---- */
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  .kicker{font-family:var(--mono);font-size:13px;letter-spacing:.12em;color:var(--green);margin-bottom:14px}
+  h2{font-size:clamp(30px,4vw,44px);letter-spacing:.01em;margin-bottom:16px}
+  .lede{color:#39423c;max-width:44em;margin-bottom:40px;font-size:16px}
+
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--card)}
+  .feat{padding:34px 30px;border-left:1px solid var(--line)}
+  .feat:first-child{border-left:0}
+  .feat svg{width:34px;height:34px;stroke:var(--green);fill:none;stroke-width:1.6;margin-bottom:22px}
+  .feat h3{font-size:19px;margin-bottom:10px}
+  .feat p{font-size:14.5px;color:var(--muted)}
+
+  /* timeline */
+  .timeline{display:flex;flex-direction:column;gap:18px}
+  .t-item{display:grid;grid-template-columns:220px 1fr;gap:30px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:28px 30px}
+  .t-item:hover{border-color:var(--green)}
+  .t-date{font-family:var(--mono);font-size:13px;color:var(--green);line-height:1.9}
+  .t-role{font-size:19px;font-weight:700}
+  .t-org{font-size:14.5px;color:var(--muted);margin:4px 0 12px}
+  .t-desc{font-size:15px;color:#333b35;max-width:56em}
+  .metrics{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .metric{font-family:var(--mono);font-size:12.5px;background:#eef4ec;border:1px solid #d8e4d5;color:var(--green-deep);
+    padding:5px 12px;border-radius:999px}
+  .metrics-label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--muted);width:100%;margin-bottom:-4px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .tag{font-family:var(--mono);font-size:12px;letter-spacing:.04em;border:1px solid var(--line);background:var(--paper);
+    color:#3c453f;padding:4px 11px;border-radius:6px}
+
+  /* projects */
+  .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .proj{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:30px;display:flex;flex-direction:column}
+  .proj:hover{border-color:var(--green)}
+  .proj .cat{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--green);margin-bottom:12px}
+  .proj h3{font-size:19px;margin-bottom:10px}
+  .proj p{font-size:14.5px;color:var(--muted);flex:1}
+  .proj .tags{margin-top:18px}
+  .proj-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:14px;font-weight:600;text-decoration:none}
+  .proj-link:hover{text-decoration:underline}
+  .deck-banner{margin-top:22px;background:var(--green-deep);color:#f2f5f1;border-radius:8px;padding:26px 30px;
+    display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  .deck-banner .t{font-weight:700;font-size:17px}
+  .deck-banner .d{font-size:14px;opacity:.82;flex:1;min-width:220px}
+  .deck-banner a{color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:8px;padding:9px 20px;text-decoration:none;font-size:14px}
+  .deck-banner a:hover{background:rgba(255,255,255,.12)}
+
+  /* profile */
+  .edu-list{margin-top:36px;display:flex;flex-direction:column;gap:18px}
+  .edu{display:grid;grid-template-columns:220px 1fr;gap:30px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:28px 30px}
+  .edu:hover{border-color:var(--green)}
+  .edu-date{font-family:var(--mono);font-size:13px;color:var(--green)}
+  .edu-degree{font-size:18px;font-weight:700}
+  .edu-school{font-size:14.5px;color:var(--muted);margin:2px 0 8px}
+  .edu-desc{font-size:14.5px;color:#333b35}
+  .skill-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:34px 0}
+  .skill-group{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:26px 24px}
+  .skill-group:hover{border-color:var(--green)}
+  .skill-group h4{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--green);margin-bottom:12px}
+  .career{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:36px;margin-top:10px;text-align:center}
+  .career h3{font-size:clamp(22px,3vw,30px);margin-bottom:12px}
+  .career p{color:var(--muted);font-size:15px;max-width:40em;margin:0 auto 18px}
+  .career .roles{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--green-deep)}
+  .career .roles-label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);display:block;margin-bottom:8px}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 40px}
+  .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:.05em}
+
+  @media (max-width:900px){
+    html{scroll-padding-top:124px}
+    .nav-inner{flex-wrap:wrap;height:auto;row-gap:10px;padding-top:12px;padding-bottom:10px}
+    .lang-toggle{margin-left:auto}
+    .nav-links{display:flex;order:3;flex-basis:100%;margin-left:0;gap:22px;overflow-x:auto}
+    .nav-links a{font-size:14px;white-space:nowrap}
+    .hero{grid-template-columns:1fr;padding:52px 0 40px}
+    .contact-card{padding:8px 20px}
+    .contact-row{flex-direction:column;gap:6px;padding:14px 0}
+    .contact-row .k{padding-top:0}
+    .cards3{grid-template-columns:1fr}
+    .feat{border-left:0;border-top:1px solid var(--line)}
+    .feat:first-child{border-top:0}
+    .t-item,.edu{grid-template-columns:1fr;gap:8px}
+    .proj-grid{grid-template-columns:1fr}
+    .skill-groups{grid-template-columns:1fr}
+    section{padding:48px 0}
+  }
+  @media print{
+    .nav,.cta-row,.deck-banner a,.lang-toggle{display:none}
+    body{background:#fff}
+    section{padding:28px 0}
+    .hero{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#111713;--card:#18201b;--ink:#edf2ee;--muted:#b7c1ba;
+      --green:#78d9ae;--green-deep:#b9f0d6;--line:#344139;--lime:#b7ca55;
+    }
+    body{background-image:linear-gradient(rgba(237,242,238,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(237,242,238,.045) 1px,transparent 1px)}
+    .nav{background:rgba(17,23,19,.9)}
+    .lang-toggle button.active{background:var(--ink);color:var(--paper)}
+    .tagline,.t-desc,.edu-desc{color:#d9e1dc}
+    .metric{background:#223229;border-color:#3a5547;color:#b9f0d6}
+    .tag{background:#111713;color:#d8e1db}
+    .deck-banner{background:#0b3e2d}
+    .deck-banner a{color:#fff}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <span class="brand"><span class="dot"></span><span data-i18n="nav.status">香港 · 可联系</span></span>
+    <nav class="nav-links" aria-label="primary">
+      <a href="#focus" data-i18n="nav.focus">方向</a>
+      <a href="#experience" data-i18n="nav.exp">经历</a>
+      <a href="#projects" data-i18n="nav.proj">项目</a>
+      <a href="#profile" data-i18n="nav.profile">简介</a>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="language">
+      <button id="btn-zh" class="active" type="button">中</button>
+      <button id="btn-en" type="button">EN</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <p class="eyebrow" data-i18n="hero.eyebrow">网络工程 / IT 服务 / 软件开发</p>
+      <h1 data-i18n="hero.name">潘书龙</h1>
+      <p class="tagline" data-i18n="hero.tagline">电信网络运维出身，扎根企业 IT 服务，辅以软件开发能力——专注让复杂系统稳定、可控、好用。</p>
+      <p class="degree" data-i18n="hero.degree">香港理工大学 · 电子与信息工程理学硕士 | 香港</p>
+      <div class="cta-row">
+        <a class="btn btn-ghost" href="#experience" data-i18n="hero.cta1">实践经历</a>
+        <a class="btn btn-ghost" href="#projects" data-i18n="hero.cta2">项目内容</a>
+      </div>
+    </div>
+    <aside class="contact-card" aria-label="contact">
+      <div class="contact-row"><span class="k" data-i18n="c.phone">电话</span><span class="v"><a href="tel:+85295192258">+852-95192258</a></span></div>
+      <div class="contact-row"><span class="k" data-i18n="c.email">邮箱</span><span class="v"><a id="email-link" href="#">hansenpan7<img class="email-domain-img" alt="@gmail.com" src="data:image/png;base64,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"></a></span></div>
+      <div class="contact-row"><span class="k" data-i18n="c.addr">地址</span><span class="v">Tsim Sha Tsui, Hong Kong</span></div>
+      <div class="contact-row"><span class="k">LINKEDIN</span><span class="v"><a href="https://www.linkedin.com/in/shulong-pan-4088a1209" target="_blank" rel="noopener">linkedin.com/in/shulong-pan-4088a1209</a></span></div>
+      <div class="contact-row"><span class="k">GITHUB</span><span class="v"><a href="https://github.com/hansenpan7" target="_blank" rel="noopener">github.com/hansenpan7</a></span></div>
+    </aside>
+  </div>
+
+  <!-- 01 FOCUS -->
+  <section id="focus">
+    <p class="kicker" data-i18n="s1.kicker">01 / 方向</p>
+    <h2 data-i18n="s1.title">从基础设施到用户体验</h2>
+    <p class="lede" data-i18n="s1.lede">电子与信息工程背景，结合电信网络运维、企业桌面与会议支持，以及前端开发实践，专注于让系统稳定运行、让服务顺畅落地。</p>
+    <div class="cards3">
+      <div class="feat">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M7.8 7.4l3 7.4M16.2 7.4l-3 7.4M8.4 6h7.2"/></svg>
+        <h3 data-i18n="card1.t">网络工程</h3>
+        <p data-i18n="card1.d">覆盖短信、漫游、核心网与维护终端的工单、测试、变更与事故支持。</p>
+      </div>
+      <div class="feat">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M9 20h6M12 16v4"/></svg>
+        <h3 data-i18n="card2.t">企业 IT 服务</h3>
+        <p data-i18n="card2.d">桌面运维、访问权限、邮箱迁移、会议支持、机房与现场准备。</p>
+      </div>
+      <div class="feat">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg>
+        <h3 data-i18n="card3.t">软件开发</h3>
+        <p data-i18n="card3.d">掌握 Java、Python 与网页开发，涉足 Android、MATLAB 与工程工具。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 EXPERIENCE -->
+  <section id="experience">
+    <p class="kicker" data-i18n="s2.kicker">02 / 经历</p>
+    <h2 data-i18n="s2.title">实践经历</h2>
+    <div class="timeline" style="margin-top:36px">
+      <div class="t-item">
+        <div class="t-date" data-i18n="e1.date">2026年8月 — 至今</div>
+        <div>
+          <div class="t-role" data-i18n="e1.role">IT 服务工程师</div>
+          <div class="t-org" data-i18n="e1.org">招商局金融科技有限公司（香港分公司）· 香港</div>
+          <p class="t-desc" data-i18n="e1.desc">支持招商海达保险与招商金融控股的日常 IT 运维，覆盖 PC 与访问权限、邮箱系统迁移、桌面支持、会议保障、机房与现场准备，并参与 2026 年 PC 及数智服务集采协调。</p>
+          <div class="tags" data-i18n-list="e1.tags"></div>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-date" data-i18n="e2.date">2023年8月 — 2026年8月</div>
+        <div>
+          <div class="t-role" data-i18n="e2.role">工程助理（网络部）</div>
+          <div class="t-org" data-i18n="e2.org">中国移动国际有限公司</div>
+          <p class="t-desc" data-i18n="e2.desc">处理 SMS 流量与白名单、EOMS 变更通知、IR21 / OTA 文件更新、UMTS/LTE 测试，以及 GNC SMS A2P 防火墙重启、GTP SAT/ITT 测试与 Huawei GSIM HSS 维护脚本。</p>
+          <div class="metrics">
+            <span class="metrics-label" data-i18n="metrics.label">关键指标</span>
+            <span data-i18n-list="e2.metrics" style="display:contents"></span>
+          </div>
+          <div class="tags" data-i18n-list="e2.tags"></div>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-date" data-i18n="e3.date">2021年7月 — 8月</div>
+        <div>
+          <div class="t-role" data-i18n="e3.role">网页开发员</div>
+          <div class="t-org">EXTECH STUDIO LIMITED</div>
+          <p class="t-desc" data-i18n="e3.desc">使用 HTML、CSS 与 Git 重构音乐商店网站并完成品牌介绍页面，改善页面加载与访问体验。</p>
+          <div class="metrics">
+            <span class="metrics-label" data-i18n="metrics.label">关键指标</span>
+            <span data-i18n-list="e3.metrics" style="display:contents"></span>
+          </div>
+          <div class="tags" data-i18n-list="e3.tags"></div>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-date" data-i18n="e4.date">2021年12月 — 2022年1月</div>
+        <div>
+          <div class="t-role" data-i18n="e4.role">活动助理</div>
+          <div class="t-org" data-i18n="e4.org">红杉资本-创科香港基金会 · 香港 INNOX 学院开幕典礼</div>
+          <p class="t-desc" data-i18n="e4.desc">维护嘉宾名单、跟进入邀企业、整理会议记录并制作邀请函。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 PROJECTS -->
+  <section id="projects">
+    <p class="kicker" data-i18n="s3.kicker">03 / 项目</p>
+    <h2 data-i18n="s3.title">项目与工程实践</h2>
+    <p class="lede" data-i18n="s3.lede">项目跨度从通信网络、网页开发到嵌入式硬件，体现从问题拆解、工具选型到交付验证的完整工程思路。</p>
+    <div class="proj-grid">
+      <div class="proj">
+        <p class="cat" data-i18n="p1.cat">通信 / 运维</p>
+        <h3 data-i18n="p1.t">国际网络运维与自动化</h3>
+        <p data-i18n="p1.d">围绕短信流量、运营商参数、漫游测试与 Huawei 维护终端建立可重复的操作流程；通过脚本减少手动干预，并在变更中协调文件、日志与工单闭环。</p>
+        <div class="tags" data-i18n-list="p1.tags"></div>
+      </div>
+      <div class="proj">
+        <p class="cat" data-i18n="p2.cat">网页 / 体验</p>
+        <h3 data-i18n="p2.t">音乐商店网站重构</h3>
+        <p data-i18n="p2.d">重构页面代码并完成品牌介绍页面，兼顾结构、样式与加载效率。</p>
+        <div class="tags" data-i18n-list="p2.tags"></div>
+      </div>
+      <div class="proj">
+        <p class="cat" data-i18n="p3.cat">电子工程</p>
+        <h3 data-i18n="p3.t">ELEC S200F / 2020 · 555 定时器蜂鸣器</h3>
+        <p data-i18n="p3.d">完成自定义 PCB、电路实现与 3D 打印外壳，串联电子设计与机械成型流程。</p>
+        <div class="tags" data-i18n-list="p3.tags"></div>
+      </div>
+      <div class="proj">
+        <p class="cat" data-i18n="p4.cat">电子工程</p>
+        <h3 data-i18n="p4.t">ELEC S210F / 2019 · Raspberry Pi 自主机器人</h3>
+        <p data-i18n="p4.d">带领团队搭建配备直流电机的自主机器人，协调硬件集成与团队执行。</p>
+        <a class="proj-link" href="https://youtube.com/shorts/0dLhnGROldQ?feature=shared" target="_blank" rel="noopener"><span data-i18n="p4.link">在 YouTube Shorts 查看项目视频</span><span aria-hidden="true"> ↗</span></a>
+        <div class="tags" data-i18n-list="p4.tags"></div>
+      </div>
+    </div>
+    <div class="deck-banner">
+      <div style="flex:1;min-width:240px">
+        <p class="t" data-i18n="sl.t">项目演示文稿</p>
+        <p class="d" data-i18n="sl.d">在 Google Slides 中查看补充项目材料。</p>
+      </div>
+      <a href="https://docs.google.com/presentation/d/1iVIZWDohtiaMyDmWt9HIy__GPlpbEYCW/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener" data-i18n="sl.cta">打开演示</a>
+    </div>
+  </section>
+
+  <!-- 04 PROFILE -->
+  <section id="profile">
+    <p class="kicker" data-i18n="s4.kicker">04 / 简介</p>
+    <h2 data-i18n="s4.title">教育与能力栈</h2>
+    <div class="edu-list">
+      <div class="edu">
+        <div class="edu-date" data-i18n="edu1.date">2022 — 2023</div>
+        <div>
+          <div class="edu-degree" data-i18n="edu1.degree">电子与信息工程理学硕士</div>
+          <div class="edu-school" data-i18n="edu1.school">香港理工大学</div>
+          <p class="edu-desc" data-i18n="edu1.d">无线网络、移动边缘计算、高阶通信系统、卫星与车联网。</p>
+        </div>
+      </div>
+      <div class="edu">
+        <div class="edu-date" data-i18n="edu2.date">2018 — 2022</div>
+        <div>
+          <div class="edu-degree" data-i18n="edu2.degree">电子与计算机工程荣誉工学学士</div>
+          <div class="edu-school" data-i18n="edu2.school">香港都会大学</div>
+          <p class="edu-desc" data-i18n="edu2.d">完成 140 小时工业训练，并实践 Python、Android 与基于位置的移动应用设计。</p>
+        </div>
+      </div>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h4 data-i18n="g1.t">编程语言</h4>
+        <div class="tags" data-i18n-list="g1.tags"></div>
+      </div>
+      <div class="skill-group">
+        <h4 data-i18n="g2.t">工程工具</h4>
+        <div class="tags" data-i18n-list="g2.tags"></div>
+      </div>
+      <div class="skill-group">
+        <h4 data-i18n="g3.t">生产力工具</h4>
+        <div class="tags" data-i18n-list="g3.tags"></div>
+      </div>
+    </div>
+    <div class="career">
+      <h3 data-i18n="cb.t">让可靠的系统，支撑更好的体验。</h3>
+      <p data-i18n="cb.d">期待在网络工程、IT 服务工程或软件开发方向，继续解决真实系统中的复杂问题。</p>
+      <span class="roles-label" data-i18n="cb.roles_l">目标岗位</span>
+      <span class="roles" data-i18n="cb.roles_v">网络工程师、IT 服务工程师、软件开发工程师</span>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot">
+      <span data-i18n="f.left">潘书龙 · 香港 © 2026</span>
+      <span data-i18n="f.right">网络 × 服务 × 软件</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+const I18N = {
+zh: {
+  "nav.status":"香港 · 可联系","nav.focus":"方向","nav.exp":"经历","nav.proj":"项目","nav.profile":"简介",
+  "hero.eyebrow":"网络工程 / IT 服务 / 软件开发","hero.name":"潘书龙",
+  "hero.tagline":"电信网络运维出身，扎根企业 IT 服务，辅以软件开发能力——专注让复杂系统稳定、可控、好用。",
+  "hero.degree":"香港理工大学 · 电子与信息工程理学硕士 | 香港",
+  "hero.cta1":"实践经历","hero.cta2":"项目内容",
+  "c.phone":"电话","c.email":"邮箱","c.addr":"地址",
+  "s1.kicker":"01 / 方向","s1.title":"从基础设施到用户体验",
+  "s1.lede":"电子与信息工程背景，结合电信网络运维、企业桌面与会议支持，以及前端开发实践，专注于让系统稳定运行、让服务顺畅落地。",
+  "card1.t":"网络工程","card1.d":"覆盖短信、漫游、核心网与维护终端的工单、测试、变更与事故支持。",
+  "card2.t":"企业 IT 服务","card2.d":"桌面运维、访问权限、邮箱迁移、会议支持、机房与现场准备。",
+  "card3.t":"软件开发","card3.d":"掌握 Java、Python 与网页开发，涉足 Android、MATLAB 与工程工具。",
+  "s2.kicker":"02 / 经历","s2.title":"实践经历",
+  "e1.date":"2026年8月 — 至今","e1.role":"IT 服务工程师","e1.org":"招商局金融科技有限公司（香港分公司）· 香港",
+  "e1.desc":"支持招商海达保险与招商金融控股的日常 IT 运维，覆盖 PC 与访问权限、邮箱系统迁移、桌面支持、会议保障、机房与现场准备，并参与 2026 年 PC 及数智服务集采协调。",
+  "e2.date":"2023年8月 — 2026年8月","e2.role":"工程助理（网络部）","e2.org":"中国移动国际有限公司",
+  "e2.desc":"处理 SMS 流量与白名单、EOMS 变更通知、IR21 / OTA 文件更新、UMTS/LTE 测试，以及 GNC SMS A2P 防火墙重启、GTP SAT/ITT 测试与 Huawei GSIM HSS 维护脚本。",
+  "e3.date":"2021年7月 — 8月","e3.role":"网页开发员",
+  "e3.desc":"使用 HTML、CSS 与 Git 重构音乐商店网站并完成品牌介绍页面，改善页面加载与访问体验。",
+  "e4.date":"2021年12月 — 2022年1月","e4.role":"活动助理","e4.org":"红杉资本-创科香港基金会 · 香港 INNOX 学院开幕典礼",
+  "e4.desc":"维护嘉宾名单、跟进入邀企业、整理会议记录并制作邀请函。",
+  "metrics.label":"关键指标",
+  "s3.kicker":"03 / 项目","s3.title":"项目与工程实践",
+  "s3.lede":"项目跨度从通信网络、网页开发到嵌入式硬件，体现从问题拆解、工具选型到交付验证的完整工程思路。",
+  "p1.cat":"通信 / 运维","p1.t":"国际网络运维与自动化",
+  "p1.d":"围绕短信流量、运营商参数、漫游测试与 Huawei 维护终端建立可重复的操作流程；通过脚本减少手动干预，并在变更中协调文件、日志与工单闭环。",
+  "p2.cat":"网页 / 体验","p2.t":"音乐商店网站重构",
+  "p2.d":"重构页面代码并完成品牌介绍页面，兼顾结构、样式与加载效率。",
+  "p3.cat":"电子工程","p3.t":"ELEC S200F / 2020 · 555 定时器蜂鸣器",
+  "p3.d":"完成自定义 PCB、电路实现与 3D 打印外壳，串联电子设计与机械成型流程。",
+  "p4.cat":"电子工程","p4.t":"ELEC S210F / 2019 · Raspberry Pi 自主机器人",
+  "p4.d":"带领团队搭建配备直流电机的自主机器人，协调硬件集成与团队执行。",
+  "p4.link":"在 YouTube Shorts 查看项目视频",
+  "sl.t":"项目演示文稿","sl.d":"在 Google Slides 中查看补充项目材料。","sl.cta":"打开演示",
+  "s4.kicker":"04 / 简介","s4.title":"教育与能力栈",
+  "edu1.date":"2022 — 2023","edu1.degree":"电子与信息工程理学硕士","edu1.school":"香港理工大学",
+  "edu1.d":"无线网络、移动边缘计算、高阶通信系统、卫星与车联网。",
+  "edu2.date":"2018 — 2022","edu2.degree":"电子与计算机工程荣誉工学学士","edu2.school":"香港都会大学",
+  "edu2.d":"完成 140 小时工业训练，并实践 Python、Android 与基于位置的移动应用设计。",
+  "g1.t":"编程语言","g2.t":"工程工具","g3.t":"生产力工具",
+  "cb.t":"让可靠的系统，支撑更好的体验。",
+  "cb.d":"期待在网络工程、IT 服务工程或软件开发方向，继续解决真实系统中的复杂问题。",
+  "cb.roles_l":"目标岗位","cb.roles_v":"网络工程师、IT 服务工程师、软件开发工程师",
+  "f.left":"潘书龙 · 香港 © 2026","f.right":"网络 × 服务 × 软件",
+  "e1.tags":["桌面运维","邮箱迁移","会议支持","采购协调"],
+  "e2.tags":["UMTS / LTE"],
+  "e2.metrics":["处理效率 +10%","可用率 +5%","人工时间 −15%"],
+  "e3.tags":["HTML / CSS / GIT"],
+  "e3.metrics":["加载速度 +20%","互动率 +10%"],
+  "p1.tags":["EOMS","IR21 / OTA","HSS","TFTP"],
+  "p2.tags":["HTML","CSS","GIT"],
+  "p3.tags":["ALTIUM DESIGNER","SOLIDWORKS","3D PRINTING"],
+  "p4.tags":["RASPBERRY PI","直流电机","团队领导"],
+  "g1.tags":["Java","Python","HTML","CSS","JavaScript"],
+  "g2.tags":["MATLAB","Altium Designer","LabVIEW","SolidWorks"],
+  "g3.tags":["Adobe Photoshop","MS Office","Git"]
+},
+en: {
+  "nav.status":"Hong Kong · Available","nav.focus":"Focus","nav.exp":"Experience","nav.proj":"Projects","nav.profile":"Profile",
+  "hero.eyebrow":"NETWORK ENGINEERING / IT SERVICE / SOFTWARE DEVELOPMENT","hero.name":"HANSEN PAN",
+  "hero.tagline":"From telecom network operations to enterprise IT services, with software development in the mix — focused on making complex systems stable, manageable, and dependable.",
+  "hero.degree":"The Hong Kong Polytechnic University · MSc in Electronic and Information Engineering | Hong Kong",
+  "hero.cta1":"Experience","hero.cta2":"Projects",
+  "c.phone":"PHONE","c.email":"EMAIL","c.addr":"ADDRESS",
+  "s1.kicker":"01 / FOCUS","s1.title":"From Infrastructure to User Experience",
+  "s1.lede":"With a background in electronic and information engineering — spanning telecom network operations, enterprise desktop and meeting support, and front-end development — focused on keeping systems running reliably and services landing smoothly.",
+  "card1.t":"Network Engineering","card1.d":"Ticketing, testing, change, and incident support across SMS, roaming, core networks, and maintenance terminals.",
+  "card2.t":"Enterprise IT Services","card2.d":"Desktop operations, access management, mailbox migration, meeting support, server-room and on-site preparation.",
+  "card3.t":"Software Development","card3.d":"Hands-on with Java, Python, and web development; experienced with Android, MATLAB, and engineering tooling.",
+  "s2.kicker":"02 / EXPERIENCE","s2.title":"Professional Experience",
+  "e1.date":"Aug 2026 — Present","e1.role":"IT Service Engineer","e1.org":"China Merchants Financial Technology Co., Ltd. (Hong Kong Branch) · Hong Kong",
+  "e1.desc":"Provide day-to-day IT operations for China Merchants Haida Insurance and China Merchants Financial Holdings — covering PCs and access rights, mailbox migration, desktop support, meeting assurance, server-room and on-site preparation — and contributed to the 2026 PC and digital-services procurement coordination.",
+  "e2.date":"Aug 2023 — Aug 2026","e2.role":"Assistant Engineer (Network Department)","e2.org":"China Mobile International Limited",
+  "e2.desc":"Handled SMS traffic and whitelisting, EOMS change notifications, IR21 / OTA file updates, and UMTS/LTE testing — plus GNC SMS A2P firewall restarts, GTP SAT/ITT testing, and Huawei GSIM HSS maintenance scripting.",
+  "e3.date":"Jul — Aug 2021","e3.role":"Web Developer",
+  "e3.desc":"Rebuilt a music-store website with HTML, CSS, and Git and delivered its brand story page, improving load performance and browsing experience.",
+  "e4.date":"Dec 2021 — Jan 2022","e4.role":"Event Assistant","e4.org":"Sequoia Capital – Hong Kong Foundation for Innovation & Technology · INNOX Academy Opening Ceremony",
+  "e4.desc":"Maintained guest lists, followed up with invited companies, organized meeting minutes, and produced invitations.",
+  "metrics.label":"KEY METRICS",
+  "s3.kicker":"03 / PROJECTS","s3.title":"Projects & Engineering Practice",
+  "s3.lede":"Projects span telecom networks, web development, and embedded hardware — reflecting an end-to-end engineering mindset from problem decomposition and tool selection to delivery and validation.",
+  "p1.cat":"TELECOM / OPERATIONS","p1.t":"International Network Operations & Automation",
+  "p1.d":"Built repeatable operating procedures around SMS traffic, carrier parameters, roaming tests, and Huawei maintenance terminals; reduced manual intervention through scripting and coordinated file, log, and ticket closure across changes.",
+  "p2.cat":"WEB / EXPERIENCE","p2.t":"Music Store Website Revamp",
+  "p2.d":"Rebuilt page code and delivered the brand story page, balancing structure, styling, and load efficiency.",
+  "p3.cat":"ELECTRONIC ENGINEERING","p3.t":"ELEC S200F / 2020 · 555 Timer Buzzer",
+  "p3.d":"Completed custom PCB design, circuit implementation, and a 3D-printed enclosure — linking electronic design with mechanical fabrication.",
+  "p4.cat":"ELECTRONIC ENGINEERING","p4.t":"ELEC S210F / 2019 · Raspberry Pi Autonomous Robot",
+  "p4.d":"Led a team building a DC-motor autonomous robot, coordinating hardware integration and team execution.",
+  "p4.link":"Watch the demo on YouTube Shorts",
+  "sl.t":"Project Slide Deck","sl.d":"Browse supplementary project materials on Google Slides.","sl.cta":"Open deck",
+  "s4.kicker":"04 / PROFILE","s4.title":"Education & Skill Stack",
+  "edu1.date":"2022 — 2023","edu1.degree":"MSc in Electronic and Information Engineering","edu1.school":"The Hong Kong Polytechnic University",
+  "edu1.d":"Wireless networks, mobile edge computing, advanced communication systems, satellites, and connected vehicles.",
+  "edu2.date":"2018 — 2022","edu2.degree":"BEng (Hons) in Electronic and Computer Engineering","edu2.school":"Hong Kong Metropolitan University",
+  "edu2.d":"Completed 140 hours of industrial training, with hands-on practice in Python, Android, and location-based mobile app design.",
+  "g1.t":"PROGRAMMING","g2.t":"ENGINEERING TOOLS","g3.t":"PRODUCTIVITY",
+  "cb.t":"Reliable systems for better experiences.",
+  "cb.d":"Looking to keep solving complex, real-world systems problems across network engineering, IT service engineering, and software development.",
+  "cb.roles_l":"TARGET ROLES","cb.roles_v":"Network Engineer · IT Service Engineer · Software Developer",
+  "f.left":"HANSEN PAN · HONG KONG © 2026","f.right":"NETWORK × SERVICE × SOFTWARE",
+  "e1.tags":["Desktop Operations","Mailbox Migration","Meeting Support","Procurement Coordination"],
+  "e2.tags":["UMTS / LTE"],
+  "e2.metrics":["Efficiency +10%","Availability +5%","Manual effort −15%"],
+  "e3.tags":["HTML / CSS / GIT"],
+  "e3.metrics":["Load speed +20%","Engagement +10%"],
+  "p1.tags":["EOMS","IR21 / OTA","HSS","TFTP"],
+  "p2.tags":["HTML","CSS","GIT"],
+  "p3.tags":["ALTIUM DESIGNER","SOLIDWORKS","3D PRINTING"],
+  "p4.tags":["RASPBERRY PI","DC Motors","Team Leadership"],
+  "g1.tags":["Java","Python","HTML","CSS","JavaScript"],
+  "g2.tags":["MATLAB","Altium Designer","LabVIEW","SolidWorks"],
+  "g3.tags":["Adobe Photoshop","MS Office","Git"]
+}};
+
+function renderList(el, items, cls){
+  el.innerHTML = items.map(t => '<span class="'+cls+'">'+t+'</span>').join('');
+}
+function setLang(lang){
+  const dict = I18N[lang] || I18N.zh;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = dict[el.dataset.i18n];
+    if (typeof v === 'string') el.textContent = v;
+  });
+  document.querySelectorAll('[data-i18n-list]').forEach(el => {
+    const v = dict[el.dataset.i18nList];
+    if (Array.isArray(v)) renderList(el, v, el.closest('.metrics') ? 'metric' : 'tag');
+  });
+  document.documentElement.lang = lang === 'en' ? 'en' : 'zh-Hant';
+  document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+}
+document.getElementById('btn-zh').addEventListener('click', () => setLang('zh'));
+document.getElementById('btn-en').addEventListener('click', () => setLang('en'));
+(function(){var a=document.getElementById('email-link');if(a){a.setAttribute('href','mailto:'+'hansenpan7'+'@'+'gmail.com');}})();
+/* 平滑滚动兜底：确保锚点按钮在各类浏览器/嵌入预览中都能滚动到对应板块 */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var id = a.getAttribute('href').slice(1);
+    if(!id) return;
+    var t = document.getElementById(id);
+    if(!t) return;
+    e.preventDefault();
+    try { t.scrollIntoView({behavior:'smooth', block:'start'}); } catch(err) { t.scrollIntoView(); }
+    try { history.replaceState(null, '', '#'+id); } catch(err) {}
+  });
+});
+setLang('zh');
+</script>
+</body>
+</html>
